@@ -10,7 +10,7 @@ var total = 0
 for(var i in args) { total += args[i]; }
 console.log(total);
 
-// learntonode solution:
+// learnyounode solution:
 // var result = 0
 // for (var i = 2; i < process.argv.length; i++) {
 //       result += Number(process.argv[i])
