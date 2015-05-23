@@ -163,3 +163,68 @@
 //     console.log(data)
 //   }))
 // })
+
+// JUGGLING ASYNC
+// This problem is the same as the previous problem (HTTP COLLECT) in that you need to use http.get(). However, this time you will be provided with three URLs as the first three command-line arguments.
+
+// You must collect the complete content provided to you by each of the URLs and print it to the console (stdout). You don't need to print out the length, just the data as a String; one line per URL. The catch is that you must print them out in the same order as the URLs are provided to you as command-line arguments.
+
+// my solution:
+// const http = require('http')
+// const bl = require('bl')
+// const source = process.argv.slice(2)
+// var count = 0
+// var content = []
+
+// function printContent() {
+//   for (var i = 0; i < content.length; i++) {
+//       console.log(content[i])
+//   }
+// };
+
+// function getContent(source, index) {
+//   http.get(source[index], function(response) {
+//     response.pipe(bl(function (error, data) {
+//       if (error) {
+//         return console.error(error)
+//       }
+//       content[index] = data.toString();
+//       if (++count == source.length) {
+//         printContent();
+//       }
+//     }))
+//   })
+// };
+
+// for (var i = 0; i < source.length; i++) {
+//   getContent(source, i)
+// };
+
+// learnyounode solution:
+// var http = require('http')
+// var bl = require('bl')
+// var results = []
+// var count = 0
+
+// function printResults () {
+//   for (var i = 0; i < 3; i++)
+//     console.log(results[i])
+// }
+
+// function httpGet (index) {
+//   http.get(process.argv[2 + index], function (response) {
+//     response.pipe(bl(function (err, data) {
+//       if (err)
+//         return console.error(err)
+
+//       results[index] = data.toString()
+//       count++
+
+//       if (count == 3)
+//         printResults()
+//     }))
+//   })
+// }
+
+// for (var i = 0; i < 3; i++)
+//   httpGet(i)
