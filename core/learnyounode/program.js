@@ -19,7 +19,15 @@
 
 // MY FIRST I/O
 
-var fs = require('fs')
-var file = fs.readFileSync(process.argv[2]);
-var newlines = file.toString().split('\n').length - 1
-console.log(newlines);
+// var fs = require('fs')
+// var file = fs.readFileSync(process.argv[2]);
+// var newlines = file.toString().split('\n').length - 1
+// console.log(newlines);
+
+// learnyounode solution:
+// var fs = require('fs')
+// var content = fs.readFileSync(process.argv[2])
+// var lines = content.toString().split('\n').length - 1
+// console.log(lines)
+
+
