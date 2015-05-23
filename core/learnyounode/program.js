@@ -19,6 +19,7 @@
 
 // MY FIRST I/O
 
+// my solution:
 // var fs = require('fs')
 // var file = fs.readFileSync(process.argv[2]);
 // var newlines = file.toString().split('\n').length - 1
@@ -30,4 +31,14 @@
 // var lines = content.toString().split('\n').length - 1
 // console.log(lines)
 
+// MY FIRST ASYNC I/O
+
+// my solution:
+// var fs = require('fs')
+// var file = process.argv[2]
+
+// fs.readFile(file, function (err, contents) {
+//   var lines = contents.toString().split('\n').length - 1
+//   console.log(lines)
+// })
 
